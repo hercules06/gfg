@@ -20,12 +20,10 @@ class Solution {
         }
         Node* newnode=new Node(arr[0]);
         Node* curr=newnode;
-        
         for(int i=1;i<n;i++){
             curr->next=new Node(arr[i]);
             curr=curr->next;
-            
-        }
-        return newnode;
+    }
+    return newnode;
     }
 };
