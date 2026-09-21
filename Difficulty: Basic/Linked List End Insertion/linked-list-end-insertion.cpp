@@ -14,14 +14,14 @@ class Solution {
     Node *insertAtEnd(Node *head, int x) {
         // Code here
         Node* newnode=new Node(x);
+        Node* temp=head;
         if(head==NULL){
             return newnode;
         }
-        Node* curr=head;
-        while(curr->next!=NULL){
-            curr=curr->next;
+        while(temp->next!=NULL){
+            temp=temp->next;
         }
-        curr->next=newnode;
+        temp->next=newnode;
         return head;
     }
 };
