@@ -14,33 +14,34 @@ class Solution {
   public:
     Node* intersectPoint(Node* head1, Node* head2) {
         //  code here
-        Node* curr1=head1;
-        Node* curr2=head2;
         int lena=0;
         int lenb=0;
-        while(curr1!=NULL){
+        Node* temp1=head1;
+        while(temp1!=NULL){
+            
             lena++;
-            curr1=curr1->next;
+            temp1=temp1->next;
         }
-        while(curr2!=NULL){
+        Node* temp2=head2;
+        while(temp2!=NULL){
             lenb++;
-            curr2=curr2->next;
+            temp2=temp2->next;
         }
-        curr1=head1;
-        curr2=head2;
+        temp1=head1;
+        temp2=head2;
         while(lena>lenb){
-            curr1=curr1->next;
+            temp1=temp1->next;
             lena--;
         }
-        while(lena<lenb){
-            curr2=curr2->next;
+        while(lenb>lena){
+            temp2=temp2->next;
             lenb--;
         }
-        while(curr1!=curr2){
-            curr1=curr1->next;
-            curr2=curr2->next;
+        while(temp1!=temp2){
+            temp1=temp1->next;
+            temp2=temp2->next;
         }
-        return curr1;
+        return temp1;
         
-    }
+        }
 };
